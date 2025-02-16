@@ -161,31 +161,3 @@ final class DBViewModel: ObservableObject {
         self.showBook = false
     }
 }
-    
-//    func resetAll() {
-//        ruhiBooksCollection     = [:]
-////        ruhiCollectionHasLoaded = false
-//        ruhiBook                = RuhiBook.empty
-//        ruhiBookHasLoaded       = false
-//        error                   = ""
-//        hasError                = false
-//    }
-//}
-//    func fetchRuhiCollection() async {
-//        resetAll()
-//
-//        let result = await NetworkRepository.fetchRuhiCollection()
-//
-//        switch result {
-//        case .success(let books):
-//            self.ruhiBooksCollection = books
-////            self.ruhiCollectionHasLoaded = true
-//        case .failure(let error):
-//            self.error = error.rawValue
-//            self.hasError = true
-//        }
-//    }
-//
-//    @Published var ruhiCollectionHasLoaded      = false
-//    @Published var ruhiBook: RuhiBook           = RuhiBook.empty
-//    @Published var ruhiBookHasLoaded: Bool      = false
