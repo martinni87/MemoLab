@@ -55,7 +55,7 @@ final class UserAuthViewModel: ObservableObject {
         let result = UserAuthRepository.signOut()
         
         switch result {
-        case .success(let success):
+        case .success(_):
             cleanAll()
         case .failure(let error):
             self.error = error.localizedDescription

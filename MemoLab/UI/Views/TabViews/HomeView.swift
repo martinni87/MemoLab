@@ -36,7 +36,6 @@ struct HomeView: View {
                 Text("Las actividades de este libro estarán disponibles próximamente\n¡Gracias por tu paciencia! ♥︎")
             }
         }
-//        .clipped()
     }
 }
 

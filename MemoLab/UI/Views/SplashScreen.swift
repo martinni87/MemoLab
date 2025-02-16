@@ -12,7 +12,6 @@ struct SplashScreen: View {
     @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
     @State private var scale: CGFloat
-//    @State private var opacity: Double = 1.0
     @State private var showHomeScreen: Bool
     @State private var positionY: CGFloat
     

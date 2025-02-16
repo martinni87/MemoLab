@@ -101,25 +101,3 @@ extension Quote {
     static let empty = Quote(id: "", text: "", author: "")
     static let sample = Quote(id: "BookId_UnitId_SectionId_QuoteId", text: "Esto es una cita de ejemplo para desarrollo", author: "Developer")
 }
-    
-//enum RuhiSequenceUnit: String, Identifiable, CaseIterable {
-//    case one     = "Unit1"
-//    case two     = "Unit2"
-//    case three   = "Unit3"
-//    case four    = "Unit4"
-//
-//    var id: String {
-//        self.rawValue
-//    }
-//}
-//
-//enum RuhiSequenceSection: String, Identifiable, CaseIterable {
-//    case one     = "Unit1"
-//    case two     = "Unit2"
-//    case three   = "Unit3"
-//    case four    = "Unit4"
-//
-//    var id: String {
-//        self.rawValue
-//    }
-//}

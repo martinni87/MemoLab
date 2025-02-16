@@ -82,9 +82,9 @@ struct MLButton: View {
         MLButton("Primary Sync Button") {
             print("I'm a primary sync button")
         }
-//        MLButton("Secondary Sync Button", style: .secondary, isAsync: false) {
-//            print(data.ruhiBooksCollection.values.first?.title ?? "Nothing fetch yet")
-//        }
+        MLButton("Secondary Sync Button", style: .secondary, isAsync: false) {
+            print(data.ruhiBooksCollection.values.first?.title ?? "Nothing fetch yet")
+        }
         MLButton("I'm just an async link", style: .link, isAsync: true) {
             await data.fetchRuhiBook(with: "Book1")
         }
