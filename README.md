@@ -1,7 +1,7 @@
 # MemoLab
 
 ## What's this?
-This is an iOS and iPadOS compatible application to help users to memorize and delve into a much deep meaning of Bahá'í quotes.
+This is an iOS and iPadOS compatible application to help users to memorize and delve into a much deeper meaning of Bahá'í quotes.
 
 ## Tech used
 * Swift
