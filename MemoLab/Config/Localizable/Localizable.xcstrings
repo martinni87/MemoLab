@@ -1,0 +1,145 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "- Extracto de los escritos bahá'ís -" : {
+
+    },
+    "¿Aun no has empezado a memorizar?" : {
+
+    },
+    "📖" : {
+
+    },
+    "1" : {
+
+    },
+    "2" : {
+
+    },
+    "3" : {
+
+    },
+    "A todo corazón que memorice Sus Palabras, si es el de un creyente, Dios hará que se llene con Su amor." : {
+
+    },
+    "Actividades" : {
+
+    },
+    "Activities for this quote are not available" : {
+
+    },
+    "Activity One" : {
+
+    },
+    "Activity Three" : {
+
+    },
+    "Activity Two" : {
+
+    },
+    "activity0_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entender el significado inmediato de los pasajes es el primer paso para grabarlos en la mente y el corazón. Identifique el significado de las palabras que desconozca y reflexione un momento sobre el significado del Escrito completo."
+          }
+        }
+      }
+    },
+    "activity0_welcome" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido/a al rincón de actividades. Aquí encontrarás una lista de ejercicios simples que te ayudarán a memorizar las diferentes citas y pasajes. Recomendamos realizar las actividades en un ambiente ordenado, con calma y tranquilidad y disfrutar del proceso."
+          }
+        }
+      }
+    },
+    "Bienvenido/a" : {
+
+    },
+    "Cita %lld" : {
+
+    },
+    "Email" : {
+
+    },
+    "Error in login" : {
+
+    },
+    "Exit" : {
+
+    },
+    "Hello %@" : {
+
+    },
+    "Inicio" : {
+
+    },
+    "Las actividades de este libro estarán disponibles próximamente\n¡Gracias por tu paciencia! ♥︎" : {
+
+    },
+    "Libro no disponible por el momento" : {
+
+    },
+    "Login" : {
+
+    },
+    "Login Anónimo" : {
+
+    },
+    "Login with email and password" : {
+
+    },
+    "Logout" : {
+
+    },
+    "Memo Lab" : {
+
+    },
+    "Memorizaciones" : {
+
+    },
+    "Mi perfil" : {
+
+    },
+    "Mi Perfil" : {
+
+    },
+    "Mis citas" : {
+
+    },
+    "Mis Citas" : {
+
+    },
+    "Not available" : {
+
+    },
+    "O" : {
+
+    },
+    "OK" : {
+
+    },
+    "Password" : {
+
+    },
+    "Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎" : {
+
+    },
+    "Section not available" : {
+
+    },
+    "Unit not available" : {
+
+    },
+    "Vuelve a la pantalla de inicio para seleccionar un libro y estudiar alguna cita." : {
+
+    }
+  },
+  "version" : "1.0"
+}
