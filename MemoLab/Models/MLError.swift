@@ -13,7 +13,8 @@ enum MLError: String, Error {
     case invalidCollection = "The collection your looking for is not in the database or the path is wrong"
     case invalidDataDecoding = "Something went wrong decoding your data. Check the code"
     case invalidDataEncoding = "Something went wrong encoding your data. Check the code"
-    case invalidSignIn = "Invalid sign in anonymously"
+    case invalidSignUp = "Invalid sign up"
+    case invalidSignIn = "Invalid sign in"
     case invalidSignOut = "Invalid sign out"
     case unknown = "Something went wrong, sorry 😞... Please, try again later."
 }

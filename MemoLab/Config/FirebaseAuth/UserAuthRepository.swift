@@ -9,6 +9,17 @@ import Foundation
 
 struct UserAuthRepository {
     
+    static func signUp(with email: String, and password: String) async -> Result<UserAuthModel, MLError> {
+        do {
+            let user = try await UserAuthDataSource.signUp(with: email, and: password)
+            return .success(user)
+        } catch let error as MLError {
+            return .failure(error)
+        } catch {
+            return .failure(MLError.unknown)
+        }
+    }
+    
     static func isAnonymousUserLoggedIn() -> UserAuthModel? {
         return UserAuthDataSource.isAnonymousUserLoggedIn()
     }
