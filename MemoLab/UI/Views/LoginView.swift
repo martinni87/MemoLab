@@ -21,6 +21,7 @@ struct LoginView: View {
     var body: some View {
         VStack(spacing: 50) {
             Text("Login").font(.largeTitle).fontWeight(.black)
+            Spacer()
             Button("Login Anónimo") {
                 Task {
                     await auth.signInAnonymously()
@@ -32,6 +33,12 @@ struct LoginView: View {
             Button("Login with email and password") {
                 Task {
                     await auth.signIn(with: credentials)
+                }
+            }
+            Spacer()
+            Button("Nuevo usuario") {
+                Task {
+                    await auth.signUp(with: credentials)
                 }
             }
         }

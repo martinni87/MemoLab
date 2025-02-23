@@ -10,17 +10,23 @@ import SwiftUI
 struct MLButton: View {
     
     enum ButtonStyle {
-        case primary, secondary, link
+        case primary, secondary, link, image
     }
 
     let text: String
     let style: ButtonStyle
+    let imageResource: String
     let action: () async -> Void
     let isAsync: Bool
     
-    init(_ text: String, style: ButtonStyle = .primary, isAsync: Bool = false, action: @escaping () async -> Void) {
+    init(_ text: String,
+         style: ButtonStyle = .primary,
+         imageResource: String = "",
+         isAsync: Bool = false,
+         action: @escaping () async -> Void) {
         self.text = text
         self.style = style
+        self.imageResource = imageResource
         self.isAsync = isAsync
         self.action = action
     }
@@ -37,16 +43,24 @@ struct MLButton: View {
                 }
             }
         } label: {
-            Text(text)
-                .font(.headline)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(backgroundColor)
-                .foregroundColor(foregroundColor)
-                .cornerRadius(8)
-                .overlay(
-                    style == .link ? underline : nil
-                )
+            VStack(alignment: .center){
+                if style == .image {
+                    Image(imageResource)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100)
+                }
+                Text(text)
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(backgroundColor)
+                    .foregroundColor(foregroundColor)
+                    .cornerRadius(8)
+                    .overlay(
+                        style == .link ? underline : nil
+                    )
+            }
         }
         .buttonStyle(.plain)
     }
@@ -55,7 +69,7 @@ struct MLButton: View {
         switch style {
         case .primary: return Color("ColorButtonPrimary")
         case .secondary: return Color("ColorButtonSecondary")
-        case .link: return Color(uiColor: .systemBackground)
+        case .link, .image: return Color(uiColor: .systemBackground)
         }
     }
 
@@ -63,7 +77,7 @@ struct MLButton: View {
         switch style {
         case .primary: return Color.white
         case .secondary: return Color.white
-        case .link: return Color(uiColor: .systemBlue)
+        case .link, .image: return Color(uiColor: .systemBlue)
         }
     }
 
@@ -87,6 +101,9 @@ struct MLButton: View {
         }
         MLButton("I'm just an async link", style: .link, isAsync: true) {
             await data.fetchRuhiBook(with: "Book1")
+        }
+        MLButton("Start now!", style: .image, imageResource: "IconStartActivity") {
+            print("Starting activity")
         }
     }
     .padding(.horizontal, 20)

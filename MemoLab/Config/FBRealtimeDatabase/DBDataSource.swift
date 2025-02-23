@@ -7,61 +7,46 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
+
 
 struct DBDataSource {
     
-    private static let baseURL = Database.baseURL
+    private static let reference = Database.database(url: firebaseDatabaseURL).reference()
     
     public static func fetchAll<T: CollectionProtocol>(from books: BookCollection) async throws -> [String: T] {
-        guard let url = URL(string: "\(baseURL + books.name).json") else {
-            throw MLError.invalidURL
+        
+        let snapshot = try await reference.child(books.name).getData()
+
+        guard snapshot.exists(), let data = snapshot.value else {
+            throw MLError.sanpshotIsNil
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw MLError.invalidResponse
-        }
-        
-        return try await withCheckedThrowingContinuation { continuation in
-            do {
-                let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                let decodedData = try jsonDecoder.decode([String: T].self, from: data)
-                continuation.resume(returning: decodedData)
-            } catch {
-                continuation.resume(throwing: MLError.invalidDataDecoding)
-            }
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: data)
+            let decodedData = try JSONDecoder().decode([String: T].self, from: jsonData)
+            return decodedData
+        } catch {
+            throw MLError.invalidDataDecoding
         }
     }
     
     
     public static func fetch<T: CollectionProtocol>(with key: String, from collection: BookCollection) async throws -> T {
-        guard let url = URL(string: "\(baseURL + collection.name)/\(key).json") else {
-            throw MLError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
         
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let snapshot = try await reference.child(collection.name).child(key).getData()
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw MLError.invalidResponse
+        guard snapshot.exists(), let data = snapshot.value else {
+            throw MLError.sanpshotIsNil
         }
         
-        return try await withCheckedThrowingContinuation { continuation in
-            do {
-                let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                let decodedData = try jsonDecoder.decode(T.self, from: data)
-                continuation.resume(returning: decodedData)
-            } catch {
-                continuation.resume(throwing: MLError.invalidDataDecoding)
-            }
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: data)
+            let decodedData = try JSONDecoder().decode(T.self, from: jsonData)
+            return decodedData
+        } catch {
+            throw MLError.invalidDataDecoding
         }
     }
 }

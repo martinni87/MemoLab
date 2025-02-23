@@ -1,25 +1,10 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
-    "- Extracto de los escritos bahá'ís -" : {
-
-    },
     "¿Aun no has empezado a memorizar?" : {
 
     },
     "📖" : {
-
-    },
-    "1" : {
-
-    },
-    "2" : {
-
-    },
-    "3" : {
-
-    },
-    "A todo corazón que memorice Sus Palabras, si es el de un creyente, Dios hará que se llene con Su amor." : {
 
     },
     "Actividades" : {
@@ -54,7 +39,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenido/a al rincón de actividades. Aquí encontrarás una lista de ejercicios simples que te ayudarán a memorizar las diferentes citas y pasajes. Recomendamos realizar las actividades en un ambiente ordenado, con calma y tranquilidad y disfrutar del proceso."
+            "value" : "¡Has llegado al rincón de actividades de esta cita! Aquí encontrarás una lista de ejercicios simples que te ayudarán a memorizar las diferentes citas y pasajes. Recomendamos realizar las actividades en un ambiente ordenado, con calma, el corazón blandito y disfrutar del proceso."
           }
         }
       }
@@ -117,6 +102,9 @@
 
     },
     "Not available" : {
+
+    },
+    "Nuevo usuario" : {
 
     },
     "O" : {

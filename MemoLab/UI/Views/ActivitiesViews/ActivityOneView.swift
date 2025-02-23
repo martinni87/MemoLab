@@ -6,6 +6,33 @@
 //
 
 import SwiftUI
+import SwiftData
+
+struct ActivityZeroView: View {
+    
+    let quote: Quote
+    private var activity: ActivityModel {
+        .init(activity: .activityZero, quote: quote)
+    }
+    @Query var user: UserDataModel
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 20)  {
+                Text("Activity One").font(.largeTitle).bold()
+                Text("activity0_description")
+                Text(quote.text)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    MLDismissViewComponent()
+                }
+            }
+        }
+    }
+}
 
 struct ActivityOneView: View {
     

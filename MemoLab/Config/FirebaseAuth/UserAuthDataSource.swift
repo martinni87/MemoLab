@@ -11,6 +11,17 @@ import Firebase
 
 struct UserAuthDataSource {
     
+    private static let authFB = Auth.auth()
+    
+    static func signUp(with email: String, and password: String) async throws -> UserAuthModel {
+        do {
+            let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
+            return UserAuthModel(id: authResult.user.uid, isAnonymous: false, name: authResult.user.email ?? "Desconocido")
+        } catch {
+            throw MLError.invalidSignUp
+        }
+    }
+    
     static func isAnonymousUserLoggedIn() -> UserAuthModel? {
         guard let user = Auth.auth().currentUser else {
             return nil
