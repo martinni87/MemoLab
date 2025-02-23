@@ -15,13 +15,13 @@ struct HomeHeaderSubView: View {
         VStack(alignment: .center, spacing: 40){
                 if let quote = data.onboardingQuote?.text {
                     Text(quote)
-                } else {
-                    Text("A todo corazón que memorice Sus Palabras, si es el de un creyente, Dios hará que se llene con Su amor.")
+//                } else {
+//                    Text("A todo corazón que memorice Sus Palabras, si es el de un creyente, Dios hará que se llene con Su amor.")
                 }
                 if let author = data.onboardingQuote?.author {
                     Text(author)
-                } else {
-                    Text("- Extracto de los escritos bahá'ís -")
+//                } else {
+//                    Text("- Extracto de los escritos bahá'ís -")
                 }
         }
         .onAppear{

@@ -11,7 +11,7 @@ import Firebase
 
 struct UserAuthDataSource {
     
-    static let authFB = Auth.auth()
+    private static let authFB = Auth.auth()
     
     static func signUp(with email: String, and password: String) async throws -> UserAuthModel {
         do {

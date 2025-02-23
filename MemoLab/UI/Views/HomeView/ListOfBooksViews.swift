@@ -119,7 +119,6 @@ struct ListOfSectionsSubView: View {
                 return
             }
             for id in sectionsIds {
-                print(id)
                 Task {
                     await data.fetchRuhiSection(with: id)
                 }
@@ -139,7 +138,7 @@ struct ListOfQuotesSubView: View {
             if key.contains(section.id){
                 if let quote = data.quotesCollection[key] {
                     NavigationLink {
-                        QuoteActivitiesView(data: data, quote: quote)
+                        WelcomeToActivitiesView(data: data, quote: quote)
                             .alert("Not available", isPresented: $data.hasError) {
                                 Button("OK"){}
                             } message: {
@@ -167,7 +166,6 @@ struct ListOfQuotesSubView: View {
                 return
             }
             for id in quotesIds {
-                print(id)
                 Task {
                     await data.fetchQuote(with: id)
                 }

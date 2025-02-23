@@ -16,5 +16,7 @@ enum MLError: String, Error {
     case invalidSignUp = "Invalid sign up"
     case invalidSignIn = "Invalid sign in"
     case invalidSignOut = "Invalid sign out"
+    case invalidTokenGet = "Invalid token get"
+    case sanpshotIsNil = "DB Snapshot is nil"
     case unknown = "Something went wrong, sorry 😞... Please, try again later."
 }
