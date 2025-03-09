@@ -31,7 +31,7 @@ struct WelcomeToActivitiesView: View {
                 .padding(30)
             }
             .fullScreenCover(isPresented: $startActivities) {
-                ActivityZeroView(data: data, quote: quote)
+                ActivityZeroView(quote: quote)
             }
             .navigationTitle("Actividades")
             .navigationBarTitleDisplayMode(.large)

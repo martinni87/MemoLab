@@ -14,7 +14,7 @@ struct ActivityZeroView: View {
     private var activity: ActivityModel {
         .init(activity: .activityZero, quote: quote)
     }
-    @Query var user: UserDataModel
+//    @Query var user: UserDataModel
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) var dismiss
     
