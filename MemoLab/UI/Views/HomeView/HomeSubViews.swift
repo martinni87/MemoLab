@@ -10,33 +10,31 @@ import SwiftUI
 struct HomeHeaderSubView: View {
     
     @ObservedObject var data: DBViewModel
-
+    
     var body: some View {
-        VStack(alignment: .center, spacing: 40){
-                if let quote = data.onboardingQuote?.text {
+        VStack {
+            if let quote = data.onboardingQuote?.text {
+                VStack(alignment: .center, spacing: 40){
                     Text(quote)
-//                } else {
-//                    Text("A todo corazón que memorice Sus Palabras, si es el de un creyente, Dios hará que se llene con Su amor.")
+                    if let author = data.onboardingQuote?.author {
+                        Text(author)
+                    }
                 }
-                if let author = data.onboardingQuote?.author {
-                    Text(author)
-//                } else {
-//                    Text("- Extracto de los escritos bahá'ís -")
+                .multilineTextAlignment(.center)
+                .padding(20)
+                .background{
+                    Rectangle()
+                        .fill(.colorPaper)
+                        .shadow(radius: 10)
                 }
+                .lineSpacing(20)
+            }
         }
         .onAppear{
             Task {
                 await data.fetchRandomOnboardingQuote()
             }
         }
-        .multilineTextAlignment(.center)
-        .padding(20)
-        .background{
-            Rectangle()
-                .fill(.colorPaper)
-                .shadow(radius: 10)
-        }
-        .lineSpacing(20)
     }
 }
 

@@ -147,9 +147,7 @@ final class DBViewModel: ObservableObject {
         
         switch result {
         case .success(let quotes):
-            if let quote = quotes[quotes.keys.randomElement()!] {
-                self.onboardingQuote = quote
-            }
+            self.onboardingQuote = quotes.values.randomElement()
         case .failure(let error):
             self.error = error.rawValue
             self.randomQuoteHaserror = true
