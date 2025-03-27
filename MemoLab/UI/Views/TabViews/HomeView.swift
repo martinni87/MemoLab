@@ -20,7 +20,7 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
-                Text("Bienvenido/a")
+                Text("home.welcome.title")
                     .font(.largeTitle)
                     .bold()
                     .padding(.top, 30)
@@ -30,10 +30,10 @@ struct HomeView: View {
                 HomeFooterSubView()
                     .padding(40)
             }
-            .alert("Libro no disponible por el momento", isPresented: $data.hasError) {
-                Button("OK"){}
+            .alert("alert.bookNotAvailable.title", isPresented: $data.hasError) {
+                Button("alert.primary.button"){}
             } message: {
-                Text("Las actividades de este libro estarán disponibles próximamente\n¡Gracias por tu paciencia! ♥︎")
+                Text("alert.bookNotAvailable.message")
             }
         }
     }

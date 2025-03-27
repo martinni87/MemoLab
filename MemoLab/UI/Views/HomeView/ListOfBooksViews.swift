@@ -60,10 +60,10 @@ struct ListOfUnitsSubView: View {
                     if let unit = data.ruhiUnitsCollection[key] {
                         NavigationLink(unit.title){
                             ListOfSectionsSubView(data: data, unit: unit)
-                                .alert("Not available", isPresented: $data.hasError) {
-                                    Button("OK"){}
+                                .alert("alert.unitNotAvailable.title", isPresented: $data.hasError) {
+                                    Button("alert.primary.button"){}
                                 } message: {
-                                    Text("Unit not available")
+                                    Text("alert.unitNotAvailable.message")
                                 }
                         }
                     }
@@ -94,16 +94,16 @@ struct ListOfSectionsSubView: View {
     
     var body: some View {
         Text(unit.subtitle).font(.title).bold().multilineTextAlignment(.center)
-        Text("Propósito: " + unit.goal).padding().font(.subheadline).fontWeight(.semibold)
+        Text("sectionList.goal.description: \(unit.goal)").padding().font(.subheadline).fontWeight(.semibold)
         List(data.ruhiSectionsCollection.keys.sorted(), id:\.self) { key in
             if key.contains(unit.id){
                 if let section = data.ruhiSectionsCollection[key] {
                     NavigationLink(section.title){
                         ListOfQuotesSubView(data: data, section: section)
-                            .alert("Not available", isPresented: $data.hasError) {
-                                Button("OK"){}
+                            .alert("alert.sectionNotAvailable.title", isPresented: $data.hasError) {
+                                Button("alert.primary.button"){}
                             } message: {
-                                Text("Section not available")
+                                Text("alert.sectionNotAvailable.message")
                             }
                     }
                 }
@@ -139,14 +139,14 @@ struct ListOfQuotesSubView: View {
                 if let quote = data.quotesCollection[key] {
                     NavigationLink {
                         WelcomeToActivitiesView(data: data, quote: quote)
-                            .alert("Not available", isPresented: $data.hasError) {
-                                Button("OK"){}
+                            .alert("alert.quoteActivitiesNotAvailable.title", isPresented: $data.hasError) {
+                                Button("alert.primary.button"){}
                             } message: {
-                                Text("Activities for this quote are not available")
+                                Text("alert.quoteActivitiesNotAvailable.message")
                             }
                     } label: {
                         VStack(alignment: .leading) {
-                            Text("Cita \(index + 1)")
+                            Text("list.quote.navigationLink \(index + 1)")
                                 .font(.headline)
                             Text(quote.text)
                                 .lineLimit(2)
