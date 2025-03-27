@@ -1,0 +1,702 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "activities.welcome.message" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Has llegado al rincón de actividades de esta cita! Aquí encontrarás una lista de ejercicios simples que te ayudarán con la memorización. Te recomendamos realizar las actividades en un ambiente ordenado y tranquilo, que pongas tu corazón blandito y que disfrutes del proceso. ¡Enhorabuena, porque ya has empezado!"
+          }
+        }
+      }
+    },
+    "activities.welcome.start.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let’s get started!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Empecemos!"
+          }
+        }
+      }
+    },
+    "activity.one.description" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad 1"
+          }
+        }
+      }
+    },
+    "activity.one.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activity 1"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad 1"
+          }
+        }
+      }
+    },
+    "activity.three.description" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad 3"
+          }
+        }
+      }
+    },
+    "activity.three.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activity 3"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad 3"
+          }
+        }
+      }
+    },
+    "activity.two.description" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad 2"
+          }
+        }
+      }
+    },
+    "activity.two.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activity 2"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad 2"
+          }
+        }
+      }
+    },
+    "activity.zero.description" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad preliminar"
+          }
+        }
+      }
+    },
+    "activity.zero.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preliminary Activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad preliminar"
+          }
+        }
+      }
+    },
+    "alert.anonymous.cancel.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "alert.anonymous.primary.button" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estoy de acuerdo. Continuar"
+          }
+        }
+      }
+    },
+    "alert.anonymous.title" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio de sesión anónimo"
+          }
+        }
+      }
+    },
+    "alert.anonymous.warning.message" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Estás a punto de iniciar sesión de forma anónima. Ten en cuenta que no se guardará ningún progreso. Si quieres guardar tus avances, registra un usuario nuevo e inicia sesión. "
+          }
+        }
+      }
+    },
+    "alert.bookNotAvailable.message" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las actividades de este libro estarán disponibles próximamente\n¡Gracias por tu paciencia! ♥︎"
+          }
+        }
+      }
+    },
+    "alert.bookNotAvailable.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are sorry… the book is not currently available"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos… libro no disponible de momento 😔"
+          }
+        }
+      }
+    },
+    "alert.error.login.message" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Revisa que tanto tu correo electrónico como la contraseña son correctos. Si no estás registrado te invitamos a que crees una cuenta nueva.  Si el problema persiste, ten paciencia seguramente estamos arreglando cosas 😊 "
+          }
+        }
+      }
+    },
+    "alert.error.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We’re so sorry… something went wrong 😔"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos… algo ha ido mal 😔"
+          }
+        }
+      }
+    },
+    "alert.primary.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Ok!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Vale!"
+          }
+        }
+      }
+    },
+    "alert.quoteActivitiesNotAvailable.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This quote’s activities will be available soon. We sincerely appreciate your patience! ♥︎"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las actividades de esta cita estarán disponibles próximamente\n¡Gracias por tu paciencia! ♥︎"
+          }
+        }
+      }
+    },
+    "alert.quoteActivitiesNotAvailable.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are sorry, the activities of this quote are not available yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, las actividades de esta cita aun no están disponibles"
+          }
+        }
+      }
+    },
+    "alert.sectionNotAvailable.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This section is not completely available yet. We are working to bring it to you as soon as possible ♥︎"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta sección aun no está completamente disponible. Estamos trabajando para traerla lo más pronto posible ♥︎"
+          }
+        }
+      }
+    },
+    "alert.sectionNotAvailable.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are sorry, this section is not available yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, esta sección aun no está disponible"
+          }
+        }
+      }
+    },
+    "alert.unitNotAvailable.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This activity is not completely available yet. We are working to bring it to you as soon as possible ♥︎"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta unidad aun no está completamente disponible. Estamos trabajando para traerla lo más pronto posible ♥︎"
+          }
+        }
+      }
+    },
+    "alert.unitNotAvailable.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are sorry, this unit is not available yet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, esta unidad aun no está disponible"
+          }
+        }
+      }
+    },
+    "app.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memo Lab"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memo Lab"
+          }
+        }
+      }
+    },
+    "form.email.hint" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "someone@mail.com"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tucorreo@dominio.com"
+          }
+        }
+      }
+    },
+    "form.email.label" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correo electrónico"
+          }
+        }
+      }
+    },
+    "form.login.anonymously.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymous access"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceso anónimo"
+          }
+        }
+      }
+    },
+    "form.login.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceder"
+          }
+        }
+      }
+    },
+    "form.login.forgotPassword.navigationLink" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap here to reset your password"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulsa aquí para restablecer tu contraseña"
+          }
+        }
+      }
+    },
+    "form.login.newUser.link" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register a new user"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registra un nuevo usuario"
+          }
+        }
+      }
+    },
+    "form.login.notRegistered.label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not yet registered?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Aun no te has registrado?"
+          }
+        }
+      }
+    },
+    "form.login.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio de sesión"
+          }
+        }
+      }
+    },
+    "form.password.label" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contraseña"
+          }
+        }
+      }
+    },
+    "home.welcome.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido/a"
+          }
+        }
+      }
+    },
+    "learningView.notStarted.indications" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuelve a la pantalla de inicio para seleccionar un libro y estudiar alguna cita."
+          }
+        }
+      }
+    },
+    "learningView.notStarted.label" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Aun no has empezado a memorizar?"
+          }
+        }
+      }
+    },
+    "list.quote.navigationLink %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quote %lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cita %lld"
+          }
+        }
+      }
+    },
+    "navigation.title.activities" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activities"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividades"
+          }
+        }
+      }
+    },
+    "profile.logout.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign out"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cierra sesión"
+          }
+        }
+      }
+    },
+    "Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎"
+          }
+        }
+      }
+    },
+    "recover.password.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recover password"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recuperar contraseña"
+          }
+        }
+      }
+    },
+    "register.createNewUser.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a new user"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear nuevo usuario"
+          }
+        }
+      }
+    },
+    "sectionList.goal.description: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goal: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Propósito: %@"
+          }
+        }
+      }
+    },
+    "toolbar.home.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        }
+      }
+    },
+    "toolbar.myQuotes.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Quotes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis Citas"
+          }
+        }
+      }
+    },
+    "toolbar.profile.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Profile"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi Perfil"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

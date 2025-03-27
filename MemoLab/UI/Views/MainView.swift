@@ -22,18 +22,18 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             TabView(selection: $selection) {
-                Tab("Mis citas", systemImage: "book.fill", value: 0) {
+                Tab("toolbar.myQuotes.title", systemImage: "book.fill", value: 0) {
                     LearningView(auth, data)
                 }
-                Tab("Inicio", systemImage: "house.fill", value: 1) {
+                Tab("toolbar.home.title", systemImage: "house.fill", value: 1) {
                     HomeView(auth, data)
                 }
-                Tab("Mi Perfil", systemImage: "person.circle.fill", value: 2) {
+                Tab("toolbar.profile.title", systemImage: "person.circle.fill", value: 2) {
                     UserProfileView(auth, data)
                 }
             }
             .navigationTitle(
-                selection == 0 ? "Mis Citas" : selection == 1 ? "Inicio" : "Mi Perfil"
+                selection == 0 ? "toolbar.myQuotes.title" : selection == 1 ? "toolbar.home.title" : "toolbar.profile.title"
             )
             .toolbarTitleDisplayMode(.inline)
             .toolbarBackground(Color.colorToolbarBackground, for: .navigationBar)
