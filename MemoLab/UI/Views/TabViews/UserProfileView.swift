@@ -19,8 +19,7 @@ struct UserProfileView: View {
     
     var body: some View {
         VStack {
-            Text("Hello \(auth.userAuth?.name ?? "Anónimo")")
-            Button("Logout") {
+            Button("profile.logout.button") {
                 auth.signOut()
             }
         }

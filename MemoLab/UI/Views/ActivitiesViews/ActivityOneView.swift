@@ -16,13 +16,13 @@ struct ActivityZeroView: View {
     }
 //    @Query var user: UserDataModel
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 20)  {
-                Text("Activity One").font(.largeTitle).bold()
-                Text("activity0_description")
+                Text("activity.zero.title").font(.largeTitle).bold()
+                Text("activity.zero.description")
                 Text(quote.text)
             }
             .toolbar {
@@ -39,13 +39,13 @@ struct ActivityOneView: View {
     @ObservedObject var data: DBViewModel
     let quote: Quote
     
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 20)  {
-                Text("Activity One").font(.largeTitle).bold()
-                Text("activity0_description")
+                Text("activity.one.title").font(.largeTitle).bold()
+                Text("activity.one.description")
                 Text(quote.text)
             }
             .toolbar {
@@ -62,16 +62,17 @@ struct ActivityTwoView: View {
     @ObservedObject var data: DBViewModel
     let quote: Quote
     
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("Activity Two").font(.largeTitle).bold()
+                Text("activity.two.title").font(.largeTitle).bold()
+                Text("activity.two.description")
                 Text(quote.text)
-                Button("Exit") {
-                    dismiss()
-                }
+//                Button("") {
+//                    dismiss()
+//                }
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -87,16 +88,17 @@ struct ActivityThreeView: View {
     @ObservedObject var data: DBViewModel
     let quote: Quote
     
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
-                Text("Activity Three").font(.largeTitle).bold()
+                Text("activity.three.title").font(.largeTitle).bold()
+                Text("activity.three.description")
                 Text(quote.text)
-                Button("Exit") {
-                    dismiss()
-                }
+//                Button("") {
+//                    dismiss()
+//                }
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

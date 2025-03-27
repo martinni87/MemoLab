@@ -18,8 +18,8 @@ struct ToolbarTitleComponent: View {
                 Image(systemName: "book.fill")
                     .resizable().scaledToFit().frame(height: 30)
                 VStack(alignment: .center){
-                    Text("Memo Lab").font(.title3)
-                    Text(selection == 0 ? "Memorizaciones" : selection == 1 ? "Inicio" : "Mi perfil")
+                    Text("app.title").font(.title3)
+                    Text(selection == 0 ? "toolbar.myQuotes.title" : selection == 1 ? "toolbar.home.title" : "toolbar.profile.title")
                 }
             }
             .foregroundStyle(.white)
