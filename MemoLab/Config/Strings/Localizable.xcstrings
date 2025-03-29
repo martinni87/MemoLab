@@ -149,6 +149,12 @@
     },
     "alert.anonymous.primary.button" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I agree. Continue"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -159,6 +165,12 @@
     },
     "alert.anonymous.title" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in anonymously"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -169,10 +181,16 @@
     },
     "alert.anonymous.warning.message" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " You are about to sign in anonymously. Anonymous users won’t be able to save their progress, thus any change will be lost. If you wish to save your progress, please consider creating a new user. Changes will be stored only locally. "
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " Estás a punto de iniciar sesión de forma anónima. Ten en cuenta que no se guardará ningún progreso. Si quieres guardar tus avances, registra un usuario nuevo e inicia sesión. "
+            "value" : " Estás por iniciar sesión de forma anónima. Los usuarios anónimos no pueden guardar su progreso, por lo que se perderá cualquier avance cuando vuelvas a acceder. Si deseas guardar tu progreso, por favor considera crear un nuevo usuario. Los cambios se guardan únicamente de forma local. "
           }
         }
       }
@@ -357,6 +375,54 @@
         }
       }
     },
+    "footer.info.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More memorizations coming soon. Don't miss the updates ♥︎"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximamente, habrán más memorizaciones. No te pierdas las actualizaciones ♥︎"
+          }
+        }
+      }
+    },
+    "form.clean.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Clean all"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpiar todo"
+          }
+        }
+      }
+    },
+    "form.createUser.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a new account"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea una cuenta nueva"
+          }
+        }
+      }
+    },
     "form.email.hint" : {
       "comment" : "Manual",
       "extractionState" : "manual",
@@ -489,6 +555,42 @@
         }
       }
     },
+    "form.name.hint" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frederick"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frederick"
+          }
+        }
+      }
+    },
+    "form.name.label" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name or nickname"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre o apodo"
+          }
+        }
+      }
+    },
     "form.password.label" : {
       "comment" : "Manual",
       "extractionState" : "manual",
@@ -503,6 +605,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contraseña"
+          }
+        }
+      }
+    },
+    "form.repeatPassword.label" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeat password"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetir contraseña"
           }
         }
       }
@@ -525,16 +645,28 @@
     },
     "learningView.notStarted.indications" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go back to main screen to select a book to start studying some quotes"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vuelve a la pantalla de inicio para seleccionar un libro y estudiar alguna cita."
+            "value" : "Vuelve a la pantalla de inicio para seleccionar un libro y comenzar a estudiar algunas citas"
           }
         }
       }
     },
     "learningView.notStarted.label" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haven’t you started memorizing yet?"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -587,16 +719,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cierra sesión"
-          }
-        }
-      }
-    },
-    "Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎"
           }
         }
       }

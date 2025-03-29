@@ -14,19 +14,19 @@ enum MLButtonStyle {
 struct MLButtonStyleModifier: ViewModifier {
     
     let style: MLButtonStyle
-    
-    init(_ style: MLButtonStyle) {
-        self.style = style
-    }
+    let width :CGFloat
+    let height: CGFloat
     
     func body(content: Content) -> some View {
         content
             .buttonStyle(.plain)
             .font(.headline)
             .padding()
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: width)
+            .frame(height: height)
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
+            .multilineTextAlignment(.center)
             .cornerRadius(8)
     }
 
@@ -48,7 +48,7 @@ struct MLButtonStyleModifier: ViewModifier {
 }
 
 extension View {
-    func applyMLButtonStyle(_ style: MLButtonStyle = .primary) -> some View {
-        return self.modifier(MLButtonStyleModifier(style))
+    func applyMLButtonStyle(_ style: MLButtonStyle = .primary, width: CGFloat = .infinity, height: CGFloat = 50) -> some View {
+        return self.modifier(MLButtonStyleModifier(style: style, width: width, height: height))
     }
 }

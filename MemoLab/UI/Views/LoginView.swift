@@ -22,36 +22,53 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
+            ScrollView {
                 Text("form.login.title").font(.largeTitle).fontWeight(.black)
+                    .padding(30)
                 Divider()
                 VStack(spacing: 10) {
-                    TextFieldViewComponent(emailVM)
-                    TextFieldViewComponent(passwordVM)
-                    Button("form.login.button") {
+                    Group {
+                        TextFieldViewComponent(emailVM)
+                        TextFieldViewComponent(passwordVM)
+                    }
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    Button {
                         emailVM.validate()
                         passwordVM.validate()
+                    } label: {
+                        Text("form.login.button")
+                            .applyMLButtonStyle(width: 200)
                     }
-                    .applyMLButtonStyle()
                     NavigationLink("form.login.forgotPassword.navigationLink") {
                         RecoverPasswordView()
                     }
                     .applyMLButtonStyle(.link)
                 }
+                .padding(.horizontal, 1)
+                .padding(.vertical, 30)
                 Divider()
-                Button("form.login.anonymously.button") {
+                    .foregroundStyle(.accent)
+                Button {
                     anonymousLogin = true
+                } label: {
+                    Text("form.login.anonymously.button")
+                        .applyMLButtonStyle(.secondary, width: 200)
                 }
-                .applyMLButtonStyle(.secondary)
+                .padding(.vertical, 30)
                 Divider()
-                VStack {
-                    Text("form.login.notRegistered.label")
+                VStack(spacing: 0) {
+                    Text("form.login.notRegistered.label").padding(.vertical, 0)
                     NavigationLink("form.login.newUser.link") {
-                        CreateNewUserView()
+                        CreateNewUserView(auth, data)
                     }
                     .applyMLButtonStyle(.link)
+                    .padding(.vertical, 0)
                 }
+                .padding(.vertical, 30)
             }
+            .scrollIndicators(.never)
+            .scrollDisabled(true)
             .padding()
             .navigationTitle("form.login.title")
             .toolbarVisibility(.hidden, for: .navigationBar)
