@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "" : {
+
+    },
     "activities.welcome.message" : {
       "localizations" : {
         "es" : {
@@ -221,6 +224,38 @@
         }
       }
     },
+    "alert.cancelProcess.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are about to cancel the process. If you continue, you will have to start from the begining. Do you want to cancel and start over?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás a punto de cancelar el proceso. Si continúas deberás empezar desde el principio. ¿Deseas cancelar y empezar de nuevo?"
+          }
+        }
+      }
+    },
+    "alert.cancelProcess.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel process"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar proceso"
+          }
+        }
+      }
+    },
     "alert.error.login.message" : {
       "localizations" : {
         "es" : {
@@ -247,12 +282,28 @@
         }
       }
     },
+    "alert.no.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
+      }
+    },
     "alert.primary.button" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Ok!"
+            "value" : "Ok!"
           }
         },
         "es" : {
@@ -359,6 +410,22 @@
         }
       }
     },
+    "alert.yes.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sí"
+          }
+        }
+      }
+    },
     "app.title" : {
       "localizations" : {
         "en" : {
@@ -403,6 +470,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Limpiar todo"
+          }
+        }
+      }
+    },
+    "form.continue.button" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
           }
         }
       }
@@ -459,7 +543,62 @@
         }
       }
     },
+    "form.error.formatInvalid" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The format is not valid"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El formato no es válido"
+          }
+        }
+      }
+    },
+    "form.error.isEmpty" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This field is mandatory, but is empty"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este campo es obligatorio, pero está vacío"
+          }
+        }
+      }
+    },
+    "form.error.passwordDoNotMatch" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passwords don’t match"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las contraseñas no coinciden"
+          }
+        }
+      }
+    },
     "form.login.anonymously.button" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -508,6 +647,7 @@
       }
     },
     "form.login.newUser.link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -524,6 +664,7 @@
       }
     },
     "form.login.notRegistered.label" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -591,6 +732,23 @@
         }
       }
     },
+    "form.orSeparator.label" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "or"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o"
+          }
+        }
+      }
+    },
     "form.password.label" : {
       "comment" : "Manual",
       "extractionState" : "manual",
@@ -623,6 +781,106 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetir contraseña"
+          }
+        }
+      }
+    },
+    "form.resendVerificationCode.link" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resend code"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reenviar código"
+          }
+        }
+      }
+    },
+    "form.verificationMail.hint" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0000"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0000"
+          }
+        }
+      }
+    },
+    "form.verificationMail.label" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verification code"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de verificación"
+          }
+        }
+      }
+    },
+    "form.verificationMail.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We have sent you a verification code to your email address. Please, check your mailbox, write down the code and tap on continue"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hemos enviado un código de verificación a tu correo electrónico. Por favor, revisa tu bandeja de entrada y escribe el código más abajo y pulsa continuar"
+          }
+        }
+      }
+    },
+    "form.verificationMail.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verify your email"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verifica tu email"
+          }
+        }
+      }
+    },
+    "form.verify.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verify"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verificar"
           }
         }
       }
@@ -703,6 +961,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Actividades"
+          }
+        }
+      }
+    },
+    "prelogin.accessAnonymously.button" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access anonimously"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceder de forma anónima"
+          }
+        }
+      }
+    },
+    "prelogin.accessWithEmail.button" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in with email"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar sesión con correo electrónico"
+          }
+        }
+      }
+    },
+    "prelogin.createUser.button" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create a new user"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear un nuevo usuario"
           }
         }
       }

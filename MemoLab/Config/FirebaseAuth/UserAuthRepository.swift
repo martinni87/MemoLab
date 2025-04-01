@@ -20,6 +20,17 @@ struct UserAuthRepository {
         }
     }
     
+    static func signUpWithVerification(with email: String, and password: String) async -> Result<UserAuthModel, MLError> {
+        do {
+            let user = try await UserAuthDataSource.signUpWithVerification(with: email, and: password)
+            return .success(user)
+        } catch let error as MLError {
+            return .failure(error)
+        } catch {
+            return .failure(MLError.unknown)
+        }
+    }
+    
     static func isAnonymousUserLoggedIn() -> UserAuthModel? {
         return UserAuthDataSource.isAnonymousUserLoggedIn()
     }

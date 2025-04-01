@@ -29,6 +29,21 @@ final class UserAuthViewModel: ObservableObject {
         }
     }
     
+    func signUpWithVerification(with credentials: UserCredentials) async {
+        let result = await UserAuthRepository.signUpWithVerification(with: credentials.email, and: credentials.password)
+        switch result {
+        case .success(let user):
+            self.userAuth = user
+            self.userLogged = true
+            self.hasError = false
+            self.error = ""
+        case .failure(let error):
+            self.userLogged = false
+            self.hasError = true
+            self.error = error.localizedDescription
+        }
+    }
+    
     func isUserLoggedIn() {
         guard let anonymousUser = UserAuthRepository.isAnonymousUserLoggedIn() else {
             return
@@ -36,6 +51,7 @@ final class UserAuthViewModel: ObservableObject {
         self.userAuth = anonymousUser
         self.userLogged = true
     }
+    
     func signInAnonymously() async {
         let result = await UserAuthRepository.signInAnonymously()
         switch result {

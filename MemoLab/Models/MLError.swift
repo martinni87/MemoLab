@@ -18,5 +18,15 @@ enum MLError: String, Error {
     case invalidSignOut = "Invalid sign out"
     case invalidTokenGet = "Invalid token get"
     case sanpshotIsNil = "DB Snapshot is nil"
-    case unknown = "Something went wrong, sorry 😞... Please, try again later."
+    case unknown = "Unknown error"
+}
+
+enum MLFormError: String, Error {
+    case fieldIsEmpty = "form.error.isEmpty"
+    case formatIsInvalid = "form.error.formatInvalid"
+    case passwordDoNotMatch = "form.error.passwordDoNotMatch"
+    
+    var localized: String {
+        self.rawValue.localized
+    }
 }
