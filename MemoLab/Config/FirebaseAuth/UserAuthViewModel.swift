@@ -10,44 +10,63 @@ import SwiftUI
 @MainActor
 final class UserAuthViewModel: ObservableObject {
     @Published var userAuth: UserAuthModel?
-    @Published var userLogged: Bool = false
+    @Published var userCanAccess: Bool = false
     @Published var hasError: Bool = false
     @Published var error: String = ""
+    @Published var launchVerifyEmailModal: Bool = false
     
     func signUp(with credentials: UserCredentials) async {
         let result = await UserAuthRepository.signUp(with: credentials.email, and: credentials.password)
         switch result {
         case .success(let user):
             self.userAuth = user
-            self.userLogged = true
+            self.userCanAccess = user.emailIsVerified
             self.hasError = false
             self.error = ""
+            self.launchVerifyEmailModal = !user.emailIsVerified
+            await self.sendVerificationEmail()
         case .failure(let error):
-            self.userLogged = false
+            self.userAuth = nil
+            self.userCanAccess = false
             self.hasError = true
             self.error = error.localizedDescription
+            self.launchVerifyEmailModal = false
         }
     }
     
-    func isUserLoggedIn() {
-        guard let anonymousUser = UserAuthRepository.isAnonymousUserLoggedIn() else {
+    func sendVerificationEmail() async {
+        let result = await UserAuthRepository.sendVerificationEmail()
+        switch result {
+        case .success(_):
+            self.launchVerifyEmailModal = true
+        case .failure(_):
+            self.launchVerifyEmailModal = false
+        }
+    }
+    
+    func isUserLoggedInAndVerified() async {
+        guard let user = UserAuthRepository.isUserLoggedIn() else {
             return
         }
-        self.userAuth = anonymousUser
-        self.userLogged = true
+        self.userAuth = user
+        self.userCanAccess = user.isAnonymous || user.emailIsVerified
     }
+    
     func signInAnonymously() async {
         let result = await UserAuthRepository.signInAnonymously()
         switch result {
         case .success(let user):
             self.userAuth = user
-            self.userLogged = true
+            self.userCanAccess = true
             self.hasError = false
             self.error = ""
+            self.launchVerifyEmailModal = false
         case .failure(let error):
-            self.userLogged = false
+            self.userAuth = nil
+            self.userCanAccess = false
             self.hasError = true
             self.error = error.localizedDescription
+            self.launchVerifyEmailModal = false
         }
     }
     
@@ -56,18 +75,21 @@ final class UserAuthViewModel: ObservableObject {
         switch result {
         case .success(let user):
             self.userAuth = user
-            self.userLogged = true
+            self.userCanAccess = user.emailIsVerified
             self.hasError = false
             self.error = ""
+            self.launchVerifyEmailModal = !user.emailIsVerified
         case .failure(let error):
-            self.userLogged = false
+            self.userAuth = nil
+            self.userCanAccess = false
             self.hasError = true
             self.error = error.localizedDescription
+            self.launchVerifyEmailModal = false
         }
     }
     
-    func signOut() {
-        let result = UserAuthRepository.signOut()
+    func signOut() async {
+        let result = await UserAuthRepository.signOut()
         
         switch result {
         case .success(_):
@@ -77,10 +99,16 @@ final class UserAuthViewModel: ObservableObject {
         }
     }
     
-    private func cleanAll() {
-        userAuth = nil
-        userLogged = false
-        hasError = false
-        error = ""
+    func cleanError() {
+        self.hasError = false
+        self.error = ""
     }
+    
+    private func cleanAll() {
+        self.userAuth = nil
+        self.userCanAccess = false
+        self.cleanError()
+        self.launchVerifyEmailModal = false
+    }
+    
 }

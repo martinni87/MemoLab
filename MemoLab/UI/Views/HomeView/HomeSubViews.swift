@@ -43,7 +43,7 @@ struct HomeFooterSubView: View {
         HStack(alignment: .center, spacing: 20) {
             Image(systemName: "info.circle")
                 .scaleEffect(2)
-            Text("Próximamente habrán más memorizaciones del libro de oraciones. No te pierdas las actualizaciones ♥︎")
+            Text("footer.info.message")
         }
         .padding(.vertical)
         .foregroundStyle(Color(uiColor: .systemBlue))

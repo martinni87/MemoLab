@@ -8,3 +8,5 @@
 import Foundation
 
 let EMAIL_PATTERN = #"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$"#
+let PASSWORD_PATTERN = #"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_\-.\@#$*+=?]).+$"#
+

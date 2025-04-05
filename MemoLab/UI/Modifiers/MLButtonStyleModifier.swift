@@ -8,47 +8,54 @@
 import SwiftUI
 
 enum MLButtonStyle {
-    case primary, secondary, link
+    case primary, secondary, prelogin, link
 }
 
 struct MLButtonStyleModifier: ViewModifier {
     
     let style: MLButtonStyle
-    
-    init(_ style: MLButtonStyle) {
-        self.style = style
-    }
+    let width :CGFloat
+    let height: CGFloat
     
     func body(content: Content) -> some View {
         content
             .buttonStyle(.plain)
             .font(.headline)
             .padding()
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: width)
+            .frame(height: height)
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
+            .multilineTextAlignment(.center)
             .cornerRadius(8)
+            .overlay {
+                if style == .prelogin {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("ColorButtonPreloginStroke"), lineWidth: 2)
+                }
+            }
     }
 
     private var backgroundColor: Color {
         switch style {
         case .primary: return Color("ColorButtonPrimary")
         case .secondary: return Color("ColorButtonSecondary")
+        case .prelogin: return Color("ColorButtonPrelogin")
         case .link: return Color(uiColor: .systemBackground)
         }
     }
 
     private var foregroundColor: Color {
         switch style {
-        case .primary: return Color.white
-        case .secondary: return Color.white
+        case .primary, .secondary: return Color.white
+        case .prelogin: return Color("ColorButtonTextPrelogin")
         case .link: return Color(uiColor: .systemBlue)
         }
     }
 }
 
 extension View {
-    func applyMLButtonStyle(_ style: MLButtonStyle = .primary) -> some View {
-        return self.modifier(MLButtonStyleModifier(style))
+    func applyMLButtonStyle(_ style: MLButtonStyle = .primary, width: CGFloat = .infinity, height: CGFloat = 50) -> some View {
+        return self.modifier(MLButtonStyleModifier(style: style, width: width, height: height))
     }
 }
