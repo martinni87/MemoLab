@@ -27,9 +27,9 @@ struct MemoLabApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SplashScreen(auth, data)
+            SplashScreenView(auth, data)
             .task {
-                auth.isUserLoggedIn()
+                await auth.isUserLoggedInAndVerified()
             }
         }
     }

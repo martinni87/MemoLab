@@ -1,17 +1,17 @@
 //
-//  LoginView.swift
+//  RegisterView.swift
 //  MemoLab
 //
-//  Created by Martín Antonio Córdoba Getar on 16/2/25.
+//  Created by Martín Antonio Córdoba Getar on 22/3/25.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegisterView: View {
     
     @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
-    @StateObject var form = LoginFormViewModel()
+    @StateObject var form = RegisterFormViewModel()
     
     init(_ auth: UserAuthViewModel, _ data: DBViewModel) {
         self.auth = auth
@@ -19,9 +19,8 @@ struct LoginView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 20) {
-                Text("form.login.title")
+            VStack(spacing: 10) {
+                Text("register.createNewUser.title")
                     .font(.largeTitle)
                     .fontWeight(.black)
                 Spacer()
@@ -31,33 +30,35 @@ struct LoginView: View {
                         hint: form.emailField.hint,
                         text: $form.emailField.text,
                         error: $form.emailField.error)
+                    .keyboardType(.emailAddress)
                     MLTextFieldViewComponent(
                         label: form.passwordField.label,
                         text: $form.passwordField.text,
                         error: $form.passwordField.error,
                         isSecure: true,
+                        isHidden: true,
+                        hasInfo: true,
+                        infoMessage: "form.info.passwordFormat")
+                    MLTextFieldViewComponent(
+                        label: form.repeatPasswordField.label,
+                        text: $form.repeatPasswordField.text,
+                        error: $form.repeatPasswordField.error,
+                        isSecure: true,
                         isHidden: true)
-                    NavigationLink("form.login.forgotPassword.navigationLink") {
-                        RecoverPasswordView()
+                }
+                Spacer()
+                VStack {
+                    Button {
+                        form.validate()
+                    } label: {
+                        Text("form.createUser.button")
+                            .applyMLButtonStyle()
                     }
-                    .applyMLButtonStyle(.link)
-                }
-                Spacer()
-                Button {
-                    form.validate()
-                } label: {
-                    Text("form.login.button")
-                        .applyMLButtonStyle()
-                }
-                Spacer()
-            }
-            .onChange(of: form.isValid) { _, _ in
-                if form.isValid {
-                    Task {
-                        await auth.signIn(with:
-                                            UserCredentials(
-                                                email: form.emailField.text,
-                                                password: form.passwordField.text))
+                    Button {
+                        form.cleanFields()
+                    } label: {
+                        Text("form.clean.button")
+                            .applyMLButtonStyle(.link)
                     }
                 }
             }
@@ -71,18 +72,26 @@ struct LoginView: View {
                 EmailVerificationModal(auth, data, form)
                     .interactiveDismissDisabled(true)
             })
+            .onChange(of: form.isValid) { _, _ in
+                if form.isValid {
+                    Task {
+                        await auth.signUp(
+                            with: .init(email: form.emailField.text,
+                                        password: form.passwordField.text))
+                    }
+                }
+            }
             .alert("alert.error.title", isPresented: $auth.hasError) {
                 Button("alert.primary.button") {
                     form.isValid = false
-                    auth.hasError = false
+                    auth.cleanError()
                 }
             } message: {
-                Text("alert.error.login.message")
+                Text("alert.error.register.message")
             }
-        }
     }
 }
 
 #Preview {
-    LoginView(.init(), .init())
+    RegisterView(.init(), .init())
 }

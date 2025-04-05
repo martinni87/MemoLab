@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MLButtonStyle {
-    case primary, secondary, link
+    case primary, secondary, prelogin, link
 }
 
 struct MLButtonStyleModifier: ViewModifier {
@@ -28,20 +28,27 @@ struct MLButtonStyleModifier: ViewModifier {
             .foregroundColor(foregroundColor)
             .multilineTextAlignment(.center)
             .cornerRadius(8)
+            .overlay {
+                if style == .prelogin {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("ColorButtonPreloginStroke"), lineWidth: 2)
+                }
+            }
     }
 
     private var backgroundColor: Color {
         switch style {
         case .primary: return Color("ColorButtonPrimary")
         case .secondary: return Color("ColorButtonSecondary")
+        case .prelogin: return Color("ColorButtonPrelogin")
         case .link: return Color(uiColor: .systemBackground)
         }
     }
 
     private var foregroundColor: Color {
         switch style {
-        case .primary: return Color.white
-        case .secondary: return Color.white
+        case .primary, .secondary: return Color.white
+        case .prelogin: return Color("ColorButtonTextPrelogin")
         case .link: return Color(uiColor: .systemBlue)
         }
     }
