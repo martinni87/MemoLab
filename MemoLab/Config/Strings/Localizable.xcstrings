@@ -803,8 +803,8 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "We have sent you a verification code to your email. Please, check you inbox and follow the instructions. When it’s done, come back here and tap on Continue"
+            "state" : "translated",
+            "value" : "We have sent you a verification code to your email. Please, check you inbox and follow the instructions. When it’s ready, come back here and hit on Continue"
           }
         },
         "es" : {
@@ -1059,6 +1059,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Propósito: %@"
+          }
+        }
+      }
+    },
+    "spinner.waiting.label" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando"
           }
         }
       }
