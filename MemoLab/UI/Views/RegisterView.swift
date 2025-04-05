@@ -12,7 +12,6 @@ struct RegisterView: View {
     @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
     @StateObject var form = RegisterFormViewModel()
-    @State var verificationMailSent = true
     
     init(_ auth: UserAuthViewModel, _ data: DBViewModel) {
         self.auth = auth
@@ -20,63 +19,76 @@ struct RegisterView: View {
     }
     
     var body: some View {
-        VStack(spacing: 30) {
-            Text("register.createNewUser.title")
-                .font(.largeTitle)
-                .bold()
-            Spacer()
-            VStack(spacing: 0){
-                MLTextFieldViewComponent(
-                    label: form.emailField.label,
-                    hint: form.emailField.hint,
-                    text: $form.emailField.text,
-                    error: $form.emailField.error)
-                MLTextFieldViewComponent(
-                    label: form.passwordField.label,
-                    text: $form.passwordField.text,
-                    error: $form.passwordField.error,
-                    isSecure: true,
-                    isHidden: true)
-                MLTextFieldViewComponent(
-                    label: form.repeatPasswordField.label,
-                    text: $form.repeatPasswordField.text,
-                    error: $form.repeatPasswordField.error,
-                    isSecure: true,
-                    isHidden: true)
-            }
-            Spacer()
-            HStack(spacing: 10) {
-                Button {
-                    form.validate()
-                } label: {
-                    Text("form.createUser.button")
-                        .applyMLButtonStyle(height: 80)
+            VStack(spacing: 10) {
+                Text("register.createNewUser.title")
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                Spacer()
+                VStack(spacing: 0){
+                    MLTextFieldViewComponent(
+                        label: form.emailField.label,
+                        hint: form.emailField.hint,
+                        text: $form.emailField.text,
+                        error: $form.emailField.error)
+                    .keyboardType(.emailAddress)
+                    MLTextFieldViewComponent(
+                        label: form.passwordField.label,
+                        text: $form.passwordField.text,
+                        error: $form.passwordField.error,
+                        isSecure: true,
+                        isHidden: true,
+                        hasInfo: true,
+                        infoMessage: "form.info.passwordFormat")
+                    MLTextFieldViewComponent(
+                        label: form.repeatPasswordField.label,
+                        text: $form.repeatPasswordField.text,
+                        error: $form.repeatPasswordField.error,
+                        isSecure: true,
+                        isHidden: true)
                 }
-                Button {
-                    form.cleanFields()
-                } label: {
-                    Text("form.clean.button")
-                        .applyMLButtonStyle(.secondary, height: 80)
+                Spacer()
+                VStack {
+                    Button {
+                        form.validate()
+                    } label: {
+                        Text("form.createUser.button")
+                            .applyMLButtonStyle()
+                    }
+                    Button {
+                        form.cleanFields()
+                    } label: {
+                        Text("form.clean.button")
+                            .applyMLButtonStyle(.link)
+                    }
                 }
             }
-        }
-        .padding()
-        .sheet(isPresented: $verificationMailSent, onDismiss: {
-            form.cleanFields()
-            verificationMailSent = false
-        }, content: {
-            RegisterVerificationView(auth, data, form)
-                .interactiveDismissDisabled(true)
-        })
-        .onChange(of: form.isValid) { _, _ in
-            form.sendVerificationCode()
-            verificationMailSent = true
-        }
-        /*
-         Task {
-         await auth.signUp(with: formVM.credentials)
-         }
-         */
+            .padding()
+            .sheet(isPresented: $auth.launchVerifyEmailModal, onDismiss: {
+                form.cleanFields()
+                Task {
+                    await auth.signOut()
+                }
+            }, content: {
+                EmailVerificationModal(auth, data, form)
+                    .interactiveDismissDisabled(true)
+            })
+            .onChange(of: form.isValid) { _, _ in
+                if form.isValid {
+                    Task {
+                        await auth.signUp(
+                            with: .init(email: form.emailField.text,
+                                        password: form.passwordField.text))
+                    }
+                }
+            }
+            .alert("alert.error.title", isPresented: $auth.hasError) {
+                Button("alert.primary.button") {
+                    form.isValid = false
+                    auth.cleanError()
+                }
+            } message: {
+                Text("alert.error.register.message")
+            }
     }
 }
 

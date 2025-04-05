@@ -22,48 +22,49 @@ struct PreLoginView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            NavigationStack {
-                ZStack {
-                    VStack {
-                        Image("SplashScreen")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                            .clipShape(Circle())
-                        Text("app.title")
-                            .font(.system(size: 36, weight: .black, design: .serif))
-                    }
-                    .position(x: geometry.size.width/2, y: positionY)
-                    .onAppear {
-                        if firstAppearance {
-                            positionY = geometry.size.height/2
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                                withAnimation(.bouncy(duration: 2.0)) {
-                                    positionY = 150
-                                } completion: {
-                                    showButtons = true
-                                    firstAppearance = false
-                                }
-                            }
+        if auth.userCanAccess {
+            MainView(auth, data)
+        } else {
+            GeometryReader { geometry in
+                NavigationStack {
+                    ZStack {
+                        VStack {
+                            Image("SplashScreen")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200, height: 200)
+                                .clipShape(Circle())
+                            Text("app.title")
+                                .font(.system(size: 36, weight: .black, design: .serif))
                         }
-                    }
-                    if showButtons {
-                        PreLoginButtonsSetComponent(auth, data)
-                            .padding(.top, 150)
-                            .opacity(opacity)
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                                    withAnimation(.easeIn(duration: 0.75)) {
-                                        opacity = 1
+                        .position(x: geometry.size.width/2, y: positionY)
+                        .onAppear {
+                            if firstAppearance {
+                                positionY = geometry.size.height/2
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                    withAnimation(.bouncy(duration: 2.0)) {
+                                        positionY = 150
+                                    } completion: {
+                                        showButtons = true
+                                        firstAppearance = false
                                     }
                                 }
                             }
+                        }
+                        if showButtons {
+                            PreLoginButtonsSetComponent(auth, data)
+                                .padding(.top, 150)
+                                .opacity(opacity)
+                                .onAppear {
+                                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                        withAnimation(.easeIn(duration: 0.75)) {
+                                            opacity = 1
+                                        }
+                                    }
+                                }
+                        }
                     }
                 }
-            }
-            .fullScreenCover(isPresented: $auth.userLogged) {
-                MainView(auth, data)
             }
         }
     }
@@ -144,3 +145,5 @@ struct PreLoginButtonsSetComponent: View {
         }
     }
 }
+
+

@@ -19,8 +19,13 @@ struct UserProfileView: View {
     
     var body: some View {
         VStack {
+            if let email = auth.userAuth?.email {
+                Text(email)
+            }
             Button("profile.logout.button") {
-                auth.signOut()
+                Task {
+                    await auth.signOut()
+                }
             }
         }
     }

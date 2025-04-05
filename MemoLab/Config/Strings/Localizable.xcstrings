@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
-    "" : {
-
-    },
     "activities.welcome.message" : {
       "localizations" : {
         "es" : {
@@ -266,6 +263,22 @@
         }
       }
     },
+    "alert.error.register.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are sorry, but it can’t be created a new account with this email at this moment. Verify  that you don’t have an account already created with this email, or try again later."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos pero ahora mismo no se puede crear una cuenta nueva con este correo. Verifica que no tengas una cuenta ya creada o vuelve a intentar en unos minutos."
+          }
+        }
+      }
+    },
     "alert.error.title" : {
       "localizations" : {
         "en" : {
@@ -475,7 +488,6 @@
       }
     },
     "form.continue.button" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -597,19 +609,20 @@
         }
       }
     },
-    "form.login.anonymously.button" : {
-      "extractionState" : "stale",
+    "form.info.passwordFormat" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anonymous access"
+            "value" : "The password must include at least 1 uppercase letter, 1 lowercase letter, 1 symbol (_ - . @ # $ * + = ?), and 1 number"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acceso anónimo"
+            "value" : "La contraseña debe incluir al menos 1 letra en mayúscula, 1 en minúscula, un símbolo ( _ - . @ # $ * + = ? ) y 1 número"
           }
         }
       }
@@ -642,40 +655,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pulsa aquí para restablecer tu contraseña"
-          }
-        }
-      }
-    },
-    "form.login.newUser.link" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Register a new user"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registra un nuevo usuario"
-          }
-        }
-      }
-    },
-    "form.login.notRegistered.label" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not yet registered?"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Aun no te has registrado?"
           }
         }
       }
@@ -732,19 +711,18 @@
         }
       }
     },
-    "form.orSeparator.label" : {
-      "extractionState" : "stale",
+    "form.password.hint" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "or"
+            "value" : "Password"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "o"
+            "value" : "Contraseña"
           }
         }
       }
@@ -781,22 +759,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetir contraseña"
-          }
-        }
-      }
-    },
-    "form.resendVerificationCode.link" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resend code"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reenviar código"
           }
         }
       }
@@ -841,14 +803,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "We have sent you a verification code to your email address. Please, check your mailbox, write down the code and tap on continue"
+            "state" : "needs_review",
+            "value" : "We have sent you a verification code to your email. Please, check you inbox and follow the instructions. When it’s done, come back here and tap on Continue"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hemos enviado un código de verificación a tu correo electrónico. Por favor, revisa tu bandeja de entrada y escribe el código más abajo y pulsa continuar"
+            "value" : "Hemos enviado un código de verificación a tu correo electrónico. Por favor, revisa la bandeja de entrada y sigue las instrucciones. Cuando esté listo regresa aquí y pulsa en Continuar"
           }
         }
       }
@@ -874,13 +836,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verify"
+            "value" : "Resend the verification code"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verificar"
+            "value" : "Reenvía el código de verificación"
           }
         }
       }
@@ -897,6 +859,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenido/a"
+          }
+        }
+      }
+    },
+    "info.ok.action" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vale"
           }
         }
       }
@@ -966,7 +946,8 @@
       }
     },
     "prelogin.accessAnonymously.button" : {
-      "extractionState" : "stale",
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -983,7 +964,8 @@
       }
     },
     "prelogin.accessWithEmail.button" : {
-      "extractionState" : "stale",
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1000,7 +982,8 @@
       }
     },
     "prelogin.createUser.button" : {
-      "extractionState" : "stale",
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1124,6 +1107,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mi Perfil"
+          }
+        }
+      }
+    },
+    "userAuth.name.anonymous" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymous"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anónimo"
+          }
+        }
+      }
+    },
+    "userAuth.name.unknown" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconocido"
           }
         }
       }

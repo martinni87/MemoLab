@@ -9,8 +9,10 @@ import Foundation
 
 struct UserAuthModel: Identifiable {
     let id: String
-    let isAnonymous: Bool
     let name: String
+    let email: String
+    let isAnonymous: Bool
+    let emailIsVerified: Bool
 }
 
 struct UserCredentials {

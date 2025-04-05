@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct RegisterVerificationView: View {
+struct EmailVerificationModal: View {
     
     @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
-    @ObservedObject var form: RegisterFormViewModel
+    @ObservedObject var form: BaseAuthForm
     @State var cancelRequest: Bool = false
     @Environment(\.dismiss) var dismiss
     
-    init(_ auth: UserAuthViewModel, _ data: DBViewModel, _ form: RegisterFormViewModel) {
+    init(_ auth: UserAuthViewModel, _ data: DBViewModel, _ form: BaseAuthForm) {
         self.auth = auth
         self.data = data
         self.form = form
@@ -31,22 +31,35 @@ struct RegisterVerificationView: View {
                     Text("form.verificationMail.message")
                         .multilineTextAlignment(.leading)
                         .lineSpacing(1.5)
+                    Circle()
+                        .stroke(.black, lineWidth: 1)
+                        .frame(height: 200)
+                        .background {
+                            Circle()
+                                .foregroundStyle(.gray.opacity(0.5))
+                        }
+                        .overlay {
+                            Image("IconVerificationEmail")
+                                .applyMLImageStyle(size: 150)
+                                .offset(x: -10, y: -3)
+                        }
+                    Button {
+                        Task {
+                            await auth.signIn(with: .init(email: form.emailField.text, password: form.passwordField.text))
+                        }
+                    } label: {
+                        Text("form.continue.button")
+                            .applyMLButtonStyle()
+                    }
+                    Button {
+                        Task {
+                            await auth.sendVerificationEmail()
+                        }
+                    } label: {
+                        Text("form.verify.button")
+                            .applyMLButtonStyle(.link)
+                    }
                 }
-                Spacer()
-                MLTextFieldViewComponent(label: form.verificationMail.label, hint: form.verificationMail.hint, text: $form.verificationMail.text, error: $form.verificationMail.error)
-                Button {
-                    form.confirmVerificationCode()
-                } label: {
-                    Text("form.verify.button")
-                        .applyMLButtonStyle()
-                }
-                Button {
-                    
-                } label: {
-                    Text("form.resendVerificationCode.link")
-                        .applyMLButtonStyle(.link)
-                }
-                Spacer()
             }
             .toolbar {
                 Button {
@@ -70,5 +83,5 @@ struct RegisterVerificationView: View {
 }
 
 #Preview {
-    RegisterVerificationView(.init(), .init(), .init())
+    EmailVerificationModal(.init(), .init(), LoginFormViewModel())
 }

@@ -7,10 +7,7 @@
 
 import Foundation
 
-final class LoginFormViewModel: ObservableObject {
-    @Published var emailField = TextFieldModel(label: "form.email.label", hint: "form.email.hint")
-    @Published var passwordField = TextFieldModel(label: "form.password.label")
-    @Published var isValid: Bool = false
+final class LoginFormViewModel: BaseAuthForm {
     
     private func validateEmail() -> Bool {
         guard !emailField.text.isEmpty else {
@@ -41,6 +38,12 @@ final class LoginFormViewModel: ObservableObject {
         let emailIsValid = validateEmail()
         let passwordIsValid = validatePassword()
         isValid = emailIsValid && passwordIsValid
+    }
+    
+    func cleanFields() {
+        emailField.text = ""
+        passwordField.text = ""
+        isValid = false
     }
     
 }

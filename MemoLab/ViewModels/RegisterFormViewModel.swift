@@ -5,14 +5,10 @@
 //  Created by Martín Antonio Córdoba Getar on 30/3/25.
 //
 
-import Foundation
+import SwiftUI
 
-final class RegisterFormViewModel: ObservableObject {
-    @Published var emailField = TextFieldModel(label: "form.email.label", hint: "form.email.hint")
-    @Published var passwordField = TextFieldModel(label: "form.password.label")
+final class RegisterFormViewModel: BaseAuthForm {
     @Published var repeatPasswordField = TextFieldModel(label: "form.repeatPassword.label")
-    @Published var verificationMail = TextFieldModel(label: "form.verificationMail.label", hint: "form.verificationMail.hint")
-    @Published var isValid: Bool = false
     
     private func validateEmail() -> Bool {
         guard !emailField.text.isEmpty else {
@@ -35,6 +31,15 @@ final class RegisterFormViewModel: ObservableObject {
             passwordField.error = .fieldIsEmpty
             return false
         }
+        
+        let predicate = NSPredicate(format: "SELF MATCHES[c] %@", PASSWORD_PATTERN)
+        let formatIsValid = predicate.evaluate(with: passwordField.text)
+        
+        guard formatIsValid else {
+            passwordField.error = .formatIsInvalid
+            return false
+        }
+        
         passwordField.error = nil
         return true
     }
@@ -44,6 +49,15 @@ final class RegisterFormViewModel: ObservableObject {
             repeatPasswordField.error = .fieldIsEmpty
             return false
         }
+        
+        let predicate = NSPredicate(format: "SELF MATCHES[c] %@", PASSWORD_PATTERN)
+        let formatIsValid = predicate.evaluate(with: repeatPasswordField.text)
+        
+        guard formatIsValid else {
+            repeatPasswordField.error = .formatIsInvalid
+            return false
+        }
+        
         repeatPasswordField.error = nil
         return true
     }
@@ -80,14 +94,6 @@ final class RegisterFormViewModel: ObservableObject {
         emailField.error = nil
         passwordField.error = nil
         repeatPasswordField.error = nil
+        isValid = false
     }
-    
-    func sendVerificationCode() {
-        
-    }
-    
-    func confirmVerificationCode() {
-        
-    }
-    
 }

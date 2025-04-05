@@ -20,10 +20,10 @@ struct UserAuthRepository {
         }
     }
     
-    static func signUpWithVerification(with email: String, and password: String) async -> Result<UserAuthModel, MLError> {
+    static func sendVerificationEmail() async -> Result<Bool, MLError> {
         do {
-            let user = try await UserAuthDataSource.signUpWithVerification(with: email, and: password)
-            return .success(user)
+            let emailSent = try await UserAuthDataSource.sendVerificationEmail()
+            return .success(emailSent)
         } catch let error as MLError {
             return .failure(error)
         } catch {
@@ -31,9 +31,13 @@ struct UserAuthRepository {
         }
     }
     
-    static func isAnonymousUserLoggedIn() -> UserAuthModel? {
-        return UserAuthDataSource.isAnonymousUserLoggedIn()
+    static func isUserLoggedIn() -> UserAuthModel? {
+        return UserAuthDataSource.isUserLoggedIn()
     }
+//    
+//    static func isUserVerified() -> Bool {
+//        return UserAuthDataSource.isUserVerified()
+//    }
     
     static func signInAnonymously() async -> Result<UserAuthModel, MLError> {
         do {
@@ -57,9 +61,9 @@ struct UserAuthRepository {
         }
     }
     
-    static func signOut() -> Result<Bool, MLError> {
+    static func signOut() async -> Result<Bool, MLError> {
         do {
-            try UserAuthDataSource.signOut()
+            try await UserAuthDataSource.signOut()
             return .success(true)
         } catch {
             return .failure(MLError.invalidSignOut)
