@@ -27,8 +27,51 @@
         }
       }
     },
-    "activity.one.description" : {
+    "activity.continue.next.button" : {
+      "comment" : "Manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done! Let’s go with the next activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Listo! Vamos con la siguiente actividad"
+          }
+        }
+      }
+    },
+    "activity.description.0" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Understanding the immediate meaning of the passages is the first step toward imprinting them on your mind and heart. Try to understand unfamiliar words in their context and reflect for a moment on the meaning of the entire Scripture."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entender el significado inmediato de los pasajes es el primer paso para grabarlos en la mente y el corazón. Intente comprender aquellas palabras que desconozca, dentro de su contexto, y reflexione un momento sobre el significado del Escrito completo."
+          }
+        }
+      }
+    },
+    "activity.description.1" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description of the activity 1"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -37,7 +80,80 @@
         }
       }
     },
-    "activity.one.title" : {
+    "activity.description.2" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description of the activity 2"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad 2"
+          }
+        }
+      }
+    },
+    "activity.description.3" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description of the activity 3"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la actividad 3"
+          }
+        }
+      }
+    },
+    "activity.quote.notAvailable" : {
+      "comment" : "Manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We are so sorry, but we have some problems loading the quote or the activity. Please, try again in a few minutes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, pero hubo un problema para cargar la cita o la actividad. Inténtalo de nuevo en unos minutos"
+          }
+        }
+      }
+    },
+    "activity.title.0" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preliminary Activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actividad preliminar"
+          }
+        }
+      }
+    },
+    "activity.title.1" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -53,43 +169,9 @@
         }
       }
     },
-    "activity.three.description" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descripción de la actividad 3"
-          }
-        }
-      }
-    },
-    "activity.three.title" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activity 3"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Actividad 3"
-          }
-        }
-      }
-    },
-    "activity.two.description" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descripción de la actividad 2"
-          }
-        }
-      }
-    },
-    "activity.two.title" : {
+    "activity.title.2" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -105,28 +187,20 @@
         }
       }
     },
-    "activity.zero.description" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descripción de la actividad preliminar"
-          }
-        }
-      }
-    },
-    "activity.zero.title" : {
+    "activity.title.3" : {
+      "comment" : "Manual",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Preliminary Activity"
+            "value" : "Activity 3"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Actividad preliminar"
+            "value" : "Actividad 3"
           }
         }
       }

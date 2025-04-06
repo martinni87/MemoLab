@@ -26,14 +26,22 @@ struct WelcomeToActivitiesView: View {
                         VStack{
                             Image("IconStartActivity").applyMLImageStyle()
                             Text("activities.welcome.start.button")
+                                .applyMLButtonStyle(.link)
                         }
                     }
-                    .applyMLButtonStyle(.link)
                 }
                 .padding(30)
             }
             .fullScreenCover(isPresented: $startActivities) {
-                ActivityZeroView(quote: quote)
+                ActivityView(
+                    ActivityViewModel(
+                        activity:
+                            ActivityModel(
+                                quote: quote,
+                                isFinished: false,
+                                title: "activity.title.0",
+                                description: "activity.description.0",
+                                order: 0)))
             }
             .navigationTitle("navigation.title.activities")
             .navigationBarTitleDisplayMode(.large)

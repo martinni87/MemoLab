@@ -13,21 +13,22 @@ struct HomeHeaderSubView: View {
     
     var body: some View {
         VStack {
-            if let quote = data.onboardingQuote?.text {
-                VStack(alignment: .center, spacing: 40){
-                    Text(quote)
-                    if let author = data.onboardingQuote?.author {
-                        Text(author)
-                    }
-                }
-                .multilineTextAlignment(.center)
-                .padding(20)
-                .background{
-                    Rectangle()
-                        .fill(.colorPaper)
-                        .shadow(radius: 10)
-                }
-                .lineSpacing(20)
+            if let quote = data.onboardingQuote {
+                QuoteComponent(quote: quote)
+//                VStack(alignment: .center, spacing: 40){
+//                    Text(quote)
+//                    if let author = data.onboardingQuote?.author {
+//                        Text(author)
+//                    }
+//                }
+//                .multilineTextAlignment(.center)
+//                .padding(20)
+//                .background{
+//                    Rectangle()
+//                        .fill(.colorPaper)
+//                        .shadow(radius: 10)
+//                }
+//                .lineSpacing(20)
             }
         }
         .onAppear{
