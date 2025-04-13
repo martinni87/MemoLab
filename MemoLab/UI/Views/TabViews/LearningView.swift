@@ -11,6 +11,7 @@ struct LearningView: View {
     
     @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
+    @StateObject private var viewModel = LearningViewModel()
     
     init(_ auth: UserAuthViewModel, _ data: DBViewModel) {
         self.auth = auth
@@ -18,19 +19,19 @@ struct LearningView: View {
     }
     
     var body: some View {
-            VStack(spacing: 40) {
-                Text("learningView.notStarted.label")
-                Image("IconStartStudyGuy")
-                    .applyMLImageStyle(size: 150)
-                    .background {
-                        Circle()
-                            .foregroundStyle(.accent.opacity(0.5))
-                    }
-                Text("learningView.notStarted.indications")
-            }
-            .multilineTextAlignment(.center)
-            .bold()
-            .padding()
+        VStack(spacing: 40) {
+            Text("learningView.notStarted.label")
+            Image("IconStartStudyGuy")
+                .applyMLImageStyle(size: 150)
+                .background {
+                    Circle()
+                        .foregroundStyle(.accent.opacity(0.5))
+                }
+            Text("learningView.notStarted.indications")
+        }
+        .multilineTextAlignment(.center)
+        .bold()
+        .padding()
     }
 }
 

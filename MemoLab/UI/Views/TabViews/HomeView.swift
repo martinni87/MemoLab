@@ -26,7 +26,7 @@ struct HomeView: View {
                     .padding(.top, 30)
                 HomeHeaderSubView(data: data)
                     .padding(40)
-                ListOfBooksView(data: data)
+                ListOfBooksView(auth, data)
                 HomeFooterSubView()
                     .padding(40)
             }

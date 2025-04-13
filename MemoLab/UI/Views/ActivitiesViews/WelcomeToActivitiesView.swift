@@ -9,7 +9,9 @@ import SwiftUI
 
 struct WelcomeToActivitiesView: View {
     
+    @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
+    @StateObject var activityVM = ActivityViewModel()
     let quote: Quote
     
     @State var startActivities: Bool = false
@@ -26,25 +28,33 @@ struct WelcomeToActivitiesView: View {
                         VStack{
                             Image("IconStartActivity").applyMLImageStyle()
                             Text("activities.welcome.start.button")
+                                .applyMLButtonStyle(.link)
                         }
                     }
-                    .applyMLButtonStyle(.link)
                 }
                 .padding(30)
             }
             .fullScreenCover(isPresented: $startActivities) {
-                ActivityZeroView(quote: quote)
+                ActivityView(
+                    ActivityViewModel(
+                        activity:
+                            ActivityModel(
+                                quote: quote,
+                                isFinished: false,
+                                title: "activity.title.0",
+                                description: "activity.description.0",
+                                order: 0)), data)
             }
             .navigationTitle("navigation.title.activities")
             .navigationBarTitleDisplayMode(.large)
             .scrollIndicators(.never)
             .toolbar {
-                MLCloseBookSheetViewComponent(data: data)
+                MLCloseSheetViewComponent(data: data)
             }
         }
     }
 }
 
 #Preview {
-    WelcomeToActivitiesView(data: DBViewModel(), quote: .sample)
+    WelcomeToActivitiesView(auth: .init(), data: .init(), quote: .sample)
 }

@@ -158,4 +158,8 @@ final class DBViewModel: ObservableObject {
         self.bookSelected = nil
         self.showBook = false
     }
+    
+    func quitActivityRequested() {
+        
+    }
 }

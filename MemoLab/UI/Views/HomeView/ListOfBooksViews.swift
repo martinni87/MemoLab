@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ListOfBooksView: View {
     
+    @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
+    
+    init(_ auth: UserAuthViewModel, _ data: DBViewModel) {
+        self.auth = auth
+        self.data = data
+    }
     
     var body: some View {
         VStack(alignment: .center){
@@ -39,7 +45,7 @@ struct ListOfBooksView: View {
         }
         .sheet(isPresented: $data.showBook) {
             if let book = data.bookSelected {
-                ListOfUnitsSubView(data: data, book: book)
+                ListOfUnitsSubView(auth: auth, data: data, book: book)
                     .interactiveDismissDisabled(true)
             }
         }
@@ -49,6 +55,7 @@ struct ListOfBooksView: View {
 
 struct ListOfUnitsSubView: View {
     
+    @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
     let book: RuhiBook
     
@@ -59,7 +66,7 @@ struct ListOfUnitsSubView: View {
                 if key.contains(book.id) {
                     if let unit = data.ruhiUnitsCollection[key] {
                         NavigationLink(unit.title){
-                            ListOfSectionsSubView(data: data, unit: unit)
+                            ListOfSectionsSubView(auth: auth, data: data, unit: unit)
                                 .alert("alert.unitNotAvailable.title", isPresented: $data.hasError) {
                                     Button("alert.primary.button"){}
                                 } message: {
@@ -72,7 +79,7 @@ struct ListOfUnitsSubView: View {
             .navigationTitle(book.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                MLCloseBookSheetViewComponent(data: data)
+                MLCloseSheetViewComponent(data: data)
             }
             .task {
                 let unitsIds = data.ruhiBooksCollection[book.id]?.units ?? []
@@ -89,6 +96,7 @@ struct ListOfUnitsSubView: View {
 
 struct ListOfSectionsSubView: View {
     
+    @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
     let unit: RuhiUnit
     
@@ -99,7 +107,7 @@ struct ListOfSectionsSubView: View {
             if key.contains(unit.id){
                 if let section = data.ruhiSectionsCollection[key] {
                     NavigationLink(section.title){
-                        ListOfQuotesSubView(data: data, section: section)
+                        ListOfQuotesSubView(auth: auth, data: data, section: section)
                             .alert("alert.sectionNotAvailable.title", isPresented: $data.hasError) {
                                 Button("alert.primary.button"){}
                             } message: {
@@ -112,7 +120,7 @@ struct ListOfSectionsSubView: View {
         .navigationTitle(unit.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            MLCloseBookSheetViewComponent(data: data)
+            MLCloseSheetViewComponent(data: data)
         }
         .task {
             guard let sectionsIds = data.ruhiUnitsCollection[unit.id]?.sections else {
@@ -129,6 +137,7 @@ struct ListOfSectionsSubView: View {
 
 struct ListOfQuotesSubView: View {
     
+    @ObservedObject var auth: UserAuthViewModel
     @ObservedObject var data: DBViewModel
     let section: RuhiSection
     @State var count = 1
@@ -138,7 +147,7 @@ struct ListOfQuotesSubView: View {
             if key.contains(section.id){
                 if let quote = data.quotesCollection[key] {
                     NavigationLink {
-                        WelcomeToActivitiesView(data: data, quote: quote)
+                        WelcomeToActivitiesView(auth: auth, data: data, quote: quote)
                             .alert("alert.quoteActivitiesNotAvailable.title", isPresented: $data.hasError) {
                                 Button("alert.primary.button"){}
                             } message: {
@@ -159,7 +168,7 @@ struct ListOfQuotesSubView: View {
         .navigationTitle(section.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            MLCloseBookSheetViewComponent(data: data)
+            MLCloseSheetViewComponent(data: data)
         }
         .task {
             guard let quotesIds = data.ruhiSectionsCollection[section.id]?.quotes else {
@@ -175,5 +184,5 @@ struct ListOfQuotesSubView: View {
 }
 
 #Preview {
-    ListOfBooksView(data: DBViewModel())
+    ListOfBooksView(UserAuthViewModel(), DBViewModel())
 }
