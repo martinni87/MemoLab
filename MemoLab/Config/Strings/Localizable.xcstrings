@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "- %@" : {
+
+    },
+    "\"%@\"" : {
+
+    },
     "activities.welcome.message" : {
       "localizations" : {
         "es" : {
@@ -69,13 +75,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Description of the activity 1"
+            "value" : "It seems that we’ve turned around our quote too many times, thus it’s a bit messy.  Would you put it in order?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descripción de la actividad 1"
+            "value" : "Parece que le hemos dado muchas vueltas a la cita y se ha desordenado. ¿Eres capaz de ordenarlas?"
           }
         }
       }
@@ -87,13 +93,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Description of the activity 2"
+            "value" : "You’ve been espectacular in the previous activity! But it seems that we’ve lost some of the words in our path. Do you remember what they are?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descripción de la actividad 2"
+            "value" : "¡Has estado espectacular en la actividad anterior! Pero parece que hemos perdido algunas palabras en el camino. ¿Recuerdas cuáles son?"
           }
         }
       }
@@ -105,13 +111,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Description of the activity 3"
+            "value" : "You are awesome! Do you dare to recite the entire quote? Tap on the button below when you’re ready and pray with your heart"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descripción de la actividad 3"
+            "value" : "¡Eres genial! ¿Te atreves a recitar toda la cita? Pulsa el botón cuando esté todo listo y ora con el corazón."
           }
         }
       }
@@ -295,6 +301,22 @@
         }
       }
     },
+    "alert.cancel.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
     "alert.cancelProcess.message" : {
       "localizations" : {
         "en" : {
@@ -365,6 +387,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lo sentimos… algo ha ido mal 😔"
+          }
+        }
+      }
+    },
+    "alert.exitActivity.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are about to leave the activity. Do you want to save your progress?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estas por salir de la actividad ¿Deseas guardar tu avance?"
+          }
+        }
+      }
+    },
+    "alert.exitActivity.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitting activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saliendo de la actividad"
           }
         }
       }
@@ -1149,6 +1203,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cargando"
+          }
+        }
+      }
+    },
+    "toolbar.closeActivity.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exit activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir de la actividad"
           }
         }
       }

@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseCore
+import SwiftData
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -25,6 +26,19 @@ struct MemoLabApp: App {
     @StateObject var auth = UserAuthViewModel()
     @StateObject var data = DBViewModel()
     
+    var sharedModelContainer: ModelContainer = {
+        let schema = Schema([
+            QuoteDataModel.self,
+        ])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
+    
     var body: some Scene {
         WindowGroup {
             SplashScreenView(auth, data)
@@ -32,5 +46,7 @@ struct MemoLabApp: App {
                 await auth.isUserLoggedInAndVerified()
             }
         }
+        .modelContainer(sharedModelContainer)
+
     }
 }

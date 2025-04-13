@@ -5,21 +5,25 @@
 //  Created by Martín Antonio Córdoba Getar on 2/2/25.
 //
 
+// MARK: Comentario para ubicar punto de retorno
+
 import SwiftUI
 import SwiftData
 
 struct ActivityView: View {
     
-    @ObservedObject var activityViewModel: ActivityViewModel
+    @ObservedObject private var activityVM: ActivityViewModel
+    @ObservedObject private var data: DBViewModel
     
-    init(_ activity: ActivityViewModel) {
-        self.activityViewModel = activity
+    init(_ activity: ActivityViewModel, _ data: DBViewModel) {
+        self.activityVM = activity
+        self.data = data
     }
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                if let activity = activityViewModel.activity {
+            ScrollView {
+                if let activity = activityVM.activity {
                     VStack(alignment: .center, spacing: 30)  {
                         Text(activity.title.localized)
                             .font(.largeTitle)
@@ -32,7 +36,7 @@ struct ActivityView: View {
                             if activity.order != 3 {
                                 NavigationLink ("activity.continue.next.button") {
                                     ActivityView(ActivityViewModel(activity:
-                                                                    nextActivity()))
+                                                                    activityVM.nextActivity()), data)
                                 }
                                 .padding()
                                 .background {
@@ -56,26 +60,27 @@ struct ActivityView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    MLDismissViewComponent()
+                    Button("toolbar.closeActivity.button") {
+                        activityVM.isExitRequested = true
+                    }
                 }
             }
+            .alert("alert.exitActivity.title", isPresented: $activityVM.isExitRequested) {
+                Button("alert.yes.button") {
+                    data.closeBook()
+                    activityVM.isExitRequested = false
+                }
+                Button("alert.no.button") {
+                    data.closeBook()
+                    activityVM.isExitRequested = false
+                }
+                Button("alert.cancel.button") {
+                    activityVM.isExitRequested = false
+                }
+            } message: {
+                Text("alert.exitActivity.message")
+            }
         }
-        
-    }
-    
-    private func nextActivity() -> ActivityModel? {
-        guard let currentActivity = activityViewModel.activity else {
-            return nil
-        }
-        guard currentActivity.order != 3 else {
-            return nil
-        }
-        let newActivityOrder = currentActivity.order + 1
-        return ActivityModel(quote: currentActivity.quote,
-                             isFinished: false,
-                             title: "activity.title.\(newActivityOrder)",
-                             description: "activity.description.\(newActivityOrder)",
-                             order: newActivityOrder)
     }
 }
 
@@ -90,7 +95,7 @@ struct ActivityView: View {
                 isFinished: false,
                 title: "activity.title.0",
                 description: "activity.description.0",
-                order: 0)))
+                order: 0)), .init())
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Debug action") {

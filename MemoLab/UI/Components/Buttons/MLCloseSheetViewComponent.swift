@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MLCloseBookSheetViewComponent: View {
+struct MLCloseSheetViewComponent: View {
     
     @ObservedObject var data: DBViewModel
 
@@ -22,5 +22,5 @@ struct MLCloseBookSheetViewComponent: View {
 }
 
 #Preview {
-    MLCloseBookSheetViewComponent(data: DBViewModel())
+    MLCloseSheetViewComponent(data: DBViewModel())
 }
