@@ -53,13 +53,19 @@ final class UserAuthViewModel: ObservableObject {
     
     func isUserLoggedInAndVerified() async {
         self.isWaitingResponse = true
-        guard let user = UserAuthRepository.isUserLoggedIn() else {
+        let result = await UserAuthRepository.isUserLoggedIn()
+        switch result {
+        case .success(let user):
+            self.userAuth = user
+            self.userCanAccess = user?.emailIsVerified ?? false
             self.isWaitingResponse = false
-            return
+        case .failure(_):
+            self.userAuth = nil
+            self.userCanAccess = false
+            self.isWaitingResponse = false
         }
-        self.userAuth = user
-        self.userCanAccess = user.isAnonymous || user.emailIsVerified
-        self.isWaitingResponse = false
+        
+        
     }
     
     func signInAnonymously() async {

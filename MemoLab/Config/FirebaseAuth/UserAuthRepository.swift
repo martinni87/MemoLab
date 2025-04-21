@@ -31,8 +31,15 @@ struct UserAuthRepository {
         }
     }
     
-    static func isUserLoggedIn() -> UserAuthModel? {
-        return UserAuthDataSource.isUserLoggedIn()
+    static func isUserLoggedIn() async -> Result<UserAuthModel?, MLError> {
+        do {
+            let user = try await UserAuthDataSource.isUserLoggedIn()
+            return .success(user)
+        } catch let error as MLError {
+            return .failure(error)
+        } catch {
+            return .failure(MLError.unknown)
+        }
     }
 //    
 //    static func isUserVerified() -> Bool {
@@ -52,7 +59,7 @@ struct UserAuthRepository {
     
     static func signIn(with email: String, and password: String) async -> Result<UserAuthModel, MLError> {
         do {
-            let user = try await UserAuthDataSource.singIn(with: email, and: password)
+            let user = try await UserAuthDataSource.signIn(with: email, and: password)
             return .success(user)
         } catch let error as MLError {
             return .failure(error)

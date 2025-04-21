@@ -23,30 +23,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MemoLabApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var auth = UserAuthViewModel()
-    @StateObject var data = DBViewModel()
-    
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            QuoteDataModel.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @StateObject private var auth = UserAuthViewModel()
     
     var body: some Scene {
         WindowGroup {
-            SplashScreenView(auth, data)
-            .task {
-                await auth.isUserLoggedInAndVerified()
-            }
+            LaunchView(auth: auth)
+                .task {
+                    await auth.isUserLoggedInAndVerified()
+                }
         }
-        .modelContainer(sharedModelContainer)
-
     }
 }
