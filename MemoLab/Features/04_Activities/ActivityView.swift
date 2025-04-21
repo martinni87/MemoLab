@@ -12,6 +12,7 @@ struct ActivityView: View {
     
     @ObservedObject private var activityVM: ActivityViewModel
     @ObservedObject private var data: DBViewModel
+    @State var text: String = ""
     
     init(_ activity: ActivityViewModel, _ data: DBViewModel) {
         self.activityVM = activity
@@ -29,6 +30,7 @@ struct ActivityView: View {
                         Text(activity.description.localized)
                             .lineSpacing(2)
                         QuoteComponent(quote: activity.quote)
+                        QuoteNotesComponent(text: text)
                         Spacer()
                         HStack() {
                             if activity.order != 3 {
