@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseCore
+import SwiftData
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -22,15 +23,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MemoLabApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var auth = UserAuthViewModel()
-    @StateObject var data = DBViewModel()
+    @StateObject private var auth = UserAuthViewModel()
     
     var body: some Scene {
         WindowGroup {
-            SplashScreenView(auth, data)
-            .task {
-                await auth.isUserLoggedInAndVerified()
-            }
+            LaunchView(auth: auth)
+                .task {
+                    await auth.isUserLoggedInAndVerified()
+                }
         }
     }
 }
