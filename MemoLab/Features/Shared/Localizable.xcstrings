@@ -27,6 +27,15 @@
         }
       }
     },
+    "Activity 2" : {
+
+    },
+    "Activity 3" : {
+
+    },
+    "Activity One" : {
+
+    },
     "activity.continue.next.button" : {
       "comment" : "Manual",
       "localizations" : {
@@ -116,6 +125,22 @@
         }
       }
     },
+    "activity.hideNotes.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide notes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocultar notas"
+          }
+        }
+      }
+    },
     "activity.quote.notAvailable" : {
       "comment" : "Manual",
       "localizations" : {
@@ -129,6 +154,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lo sentimos, pero hubo un problema para cargar la cita o la actividad. Inténtalo de nuevo en unos minutos"
+          }
+        }
+      }
+    },
+    "activity.showNotes.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show notes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar notas"
           }
         }
       }
@@ -576,6 +617,9 @@
           }
         }
       }
+    },
+    "Fetch" : {
+
     },
     "footer.info.message" : {
       "localizations" : {
@@ -1067,6 +1111,9 @@
         }
       }
     },
+    "Original order: %lld" : {
+
+    },
     "prelogin.accessAnonymously.button" : {
       "comment" : "Manual",
       "extractionState" : "manual",
@@ -1137,6 +1184,9 @@
         }
       }
     },
+    "Quote not yet separated" : {
+
+    },
     "recover.password.title" : {
       "localizations" : {
         "en" : {
@@ -1200,6 +1250,9 @@
           }
         }
       }
+    },
+    "Text: %@" : {
+
     },
     "toolbar.closeActivity.button" : {
       "localizations" : {

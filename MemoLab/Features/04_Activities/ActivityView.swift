@@ -13,6 +13,8 @@ struct ActivityView: View {
     @ObservedObject private var activityVM: ActivityViewModel
     @ObservedObject private var data: DBViewModel
     @State var text: String = ""
+    @State var quoteNotesHeight: CGFloat = 0
+    @State var showNotes: Bool = false
     
     init(_ activity: ActivityViewModel, _ data: DBViewModel) {
         self.activityVM = activity
@@ -29,14 +31,14 @@ struct ActivityView: View {
                             .bold()
                         Text(activity.description.localized)
                             .lineSpacing(2)
-                        QuoteComponent(quote: activity.quote)
-                        QuoteNotesComponent(text: text)
+                        activityVM.showGame(for: activity)
                         Spacer()
                         HStack() {
                             if activity.order != 3 {
                                 NavigationLink ("activity.continue.next.button") {
-                                    ActivityView(ActivityViewModel(activity:
-                                                                    activityVM.nextActivity()), data)
+                                    ActivityView(
+                                        .init(activity: activityVM
+                                            .nextActivity()),data)
                                 }
                                 .padding()
                                 .background {
