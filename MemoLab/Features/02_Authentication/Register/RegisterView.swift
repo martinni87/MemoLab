@@ -64,7 +64,6 @@ struct RegisterView: View {
                     await auth.signOut()
                 }
             }, content: {
-//                EmailVerificationModal(auth, data, form)
                 EmailVerificationModal(auth: auth, form: form)
                     .interactiveDismissDisabled(true)
             })
